@@ -1,3 +1,15 @@
-<div>
-  é, tudo se foi
-</div>
+<script src="/axios.min.js"></script>
+<%- include('./common.script.ejs') %>
+<script>
+  function deletarUsuario(id) {
+    axios.post('/deleteUser', {
+      id: id
+    }).then(response => {
+      console.log(response)
+    })
+
+    // sleep(3000).then(() => {
+    //   console.log(convertToMoney(7654, 'real'))
+    // })
+  }
+</script>

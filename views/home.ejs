@@ -1,5 +1,11 @@
 <%-include('../layouts/head.ejs', {title: 'Document'})%>
 <body>
-  é, perdeu
+  <% users.forEach(user => { %> 
+    <!-- Cria uma lista de usuários -->
+    <%=user.name%> <button onClick="deletarUsuario('<%=user.name%>')">Deletar</button><br>
+  <% }) %>
+
+  
+  <%-include('../scripts/home.script.ejs')%>
 </body>
 <%-include('../layouts/footer.ejs')%>

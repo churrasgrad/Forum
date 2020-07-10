@@ -6,7 +6,7 @@
         // Fazer algo depois do tempo!
       });
     */
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, time));
   }
   function convertToMoney(valueInCents, coinType) {
     /*
@@ -15,12 +15,22 @@
     coinType:     string (real, dolar, euro)
     convertToMoney(7650, 'real') //R$ 76,50
     */
-    coins = {
+    let string = "" //String para retornar
+    let ponctuation = ","
+    let symbols = {
       real: 'R$',
       dolar: 'US',
-      euro: '?'
+      euro: '€'
     }
-    //coins[coinType] procura em 'coins' o índice com o valor passado, e retorna seu valor
-    return coins[coinType] + ' ' + (valueInCent/100).replace('.', ',')
+    if(coinType == 'dolar') {
+      ponctuation = "."
+    }
+    let value = (valueInCents/100).toFixed(2).replace('.', ponctuation)//Converte para valor com 2 decimais e troca a pontuação
+    let symbol = symbols[coinType] //Pega o simbolo de acordo com a strin do usuario
+    string = symbol + ' ' + value 
+    if(coinType == 'euro') {
+      string = value + ' ' + symbol
+    }
+    return string
   }
 </script>

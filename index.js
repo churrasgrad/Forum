@@ -13,6 +13,8 @@ app.use(bodyParser.json())
 app.set('view engine', 'ejs')
 // Define a pasta dependencies como pública
 app.use(express.static('modules'));
+// Define a pasta imagens como pública
+app.use(express.static('images'));
 
 
 // Importação dos controladores
