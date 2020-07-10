@@ -1,4 +1,13 @@
 <script>
+  function sleep(time) {
+    /*
+      time: int (milisegundos)
+      sleep(500).then(() => {
+        // Fazer algo depois do tempo!
+      });
+    */
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   function convertToMoney(valueInCents, coinType) {
     /*
     Função para exibir dinheiro para o usuário. Converte centavos em reais e aplica o tipo de moeda.
