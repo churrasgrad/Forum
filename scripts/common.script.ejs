@@ -1,0 +1,17 @@
+<script>
+  function convertToMoney(valueInCents, coinType) {
+    /*
+    Função para exibir dinheiro para o usuário. Converte centavos em reais e aplica o tipo de moeda.
+    valueInCents: int
+    coinType:     string (real, dolar, euro)
+    convertToMoney(7650, 'real') //R$ 76,50
+    */
+    coins = {
+      real: 'R$',
+      dolar: 'US',
+      euro: '?'
+    }
+    //coins[coinType] procura em 'coins' o índice com o valor passado, e retorna seu valor
+    return coins[coinType] + ' ' + (valueInCent/100).replace('.', ',')
+  }
+</script>
